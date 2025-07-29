@@ -8,7 +8,7 @@ This repository is part of my learning journey during my Master's Program in Bio
 
 ## License
 
-This project is licensed under the MIT License – see the LICENSE file for details.
+This project is licensed under the MIT License – see the [LICENSE](./LICENSE) file for details.
 
 ## Citation
 
