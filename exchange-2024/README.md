@@ -37,3 +37,11 @@ This tool is helpful when codon-aware alignments are required for downstream ana
 
 ```bash
 python pep2cds.py
+
+## Acknowledgments
+- Some code components were developed with support from AI tools (e.g., ChatGPT) and reviewed/tested by the author.
+
+## License
+- MIT License.
+- You are free to use, modify, and distribute.
+- If you use this tool in your work, please cite the author (not obligatory, but appreciated).
