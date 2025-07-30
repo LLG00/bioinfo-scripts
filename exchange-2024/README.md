@@ -33,11 +33,6 @@ This tool is helpful when codon-aware alignments are required for downstream ana
 
 - `example_CDS_align.txt` — Reconstructed codon-aware alignment in nucleotide format
 
-## How to run
-
-```bash
-python pep2cds.py
-
 ## Acknowledgments
 - Some code components were developed with support from AI tools (e.g., ChatGPT) and reviewed/tested by the author.
 
