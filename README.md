@@ -11,7 +11,7 @@ This repository reflects my learning journey as a bioinformatician and serves as
 The data used with these scripts is part of ongoing research and is not publicly available due to confidentiality.  
 To run the scripts, you will need your own input files in the appropriate format (FASTA and BLAST XML).
 
-> File names used in the scripts are placeholders (e.g., QUERY_FASTA, BLAST_XML) and should be replaced with your own data.
+> File names used in the scripts are placeholders and should be replaced with your own data.
 
 ## License
 
