@@ -2,7 +2,7 @@
 
 > A codon-based CDS alignment tool based on PEP protein alignments.  
 > Developed during an academic exchange at Technische Universität Braunschweig (2024),  
-> as part of the Python Course Project at the [Institute of Biochemical Engineering (IFP)](https://www.tu-braunschweig.de/en/ifp/pbb/teaching/pythoncourseprojects).
+> as part of the Final Project at the [Python for Life Scientists Course](https://www.tu-braunschweig.de/en/ifp/pbb/teaching/pythoncourseprojects).
 
 ## Description
 
