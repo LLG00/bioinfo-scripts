@@ -44,3 +44,4 @@ The script produces a tab-separated summary of all relevant alignment data.
 ## License
 - MIT License.
 - You are free to use, modify, and distribute.
+- If you use this tool in your work, please cite the author (not obligatory, but appreciated).
