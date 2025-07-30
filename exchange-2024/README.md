@@ -13,7 +13,7 @@ This tool is helpful when codon-aware alignments are required for downstream ana
 ## Author
 
 - **Luiza Lima Galli**
-- Developed during an international exchange in 2024 at TU Braunschweig, Germany
+- Developed during an international academic exchange in 2024 at TU Braunschweig, Germany, as part of the author's undergraduate studies in Biological Sciences.
 - Contact: luiza.lima.galli@gmail.com
 
 ## Features
