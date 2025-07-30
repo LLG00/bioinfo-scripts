@@ -4,7 +4,14 @@ This repository contains bioinformatics scripts created to support my research a
 
 Some parts of these scripts were generated or refined with the help of AI tools (e.g., ChatGPT) and then tested, adapted, and used in real research contexts.
 
-This repository is part of my learning journey during my Master's Program in Bioinformatics at UNICAMP (Brazil).
+This repository is part of my learning journey during my Master's Program in Bioinformatics at UNICAMP (Brazil). 
+
+## Data
+
+The data used with these scripts is part of ongoing research and is not publicly available due to confidentiality.  
+To run the scripts, you will need your own input files in the appropriate format (FASTA and BLAST XML).
+
+> File names used in the scripts are placeholders (e.g., QUERY_FASTA, BLAST_XML) and should be replaced with your own data.
 
 ## License
 
