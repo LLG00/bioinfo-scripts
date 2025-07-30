@@ -38,7 +38,9 @@ The script produces a tab-separated summary of all relevant alignment data.
 
 - `example_OUTPUT.txt` — Tab-delimited table with all relevant alignment statistics
 
-## How to run
+## Acknowledgments
+- Some code components were developed with support from AI tools (e.g., ChatGPT) and reviewed/tested by the author.
 
-```bash
-python blast_coverage_parser.py
+## License
+- MIT License.
+- You are free to use, modify, and distribute.
