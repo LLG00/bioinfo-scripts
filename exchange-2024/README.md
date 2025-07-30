@@ -27,7 +27,7 @@ This tool is helpful when codon-aware alignments are required for downstream ana
 
 - `example_CDS.fasta` — CDS sequences (nucleotide)
 - `example_PEP.fasta` — Protein sequences (translated from CDS)
-- `example_PEP_align.tx
+- `example_PEP_align.txt` — Protein alignment (FASTA-like format with gaps)
 
 ## Output file
 
