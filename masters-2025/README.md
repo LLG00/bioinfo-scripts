@@ -18,8 +18,8 @@ The script produces a tab-separated summary of all relevant alignment data.
 ## Author
 
 - **Luiza Lima Galli**
-- Developed during the author's M.Sc. in Bioinformatics
-- Contact: *(optional email or GitHub link)*
+- Developed during the author's first year's M.Sc. in Bioinformatics
+- Contact: luiza.lima.galli@gmail.com
 
 ## Features
 
