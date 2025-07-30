@@ -11,11 +11,11 @@ from Bio import SeqIO
 
 # Creates dictionary with the length of query sequences
 
-query_lengths = {record.id: len(record.seq) for record in SeqIO.parse(QUERY_FASTA, "fasta")}
+query_lengths = {record.id: len(record.seq) for record in SeqIO.parse("query_fasta_example.fasta", "fasta")}
 
 # Creates dictionary with the length of hit sequences (subjects)
 
-hit_lengths = {record.id: len(record.seq) for record in SeqIO.parse(SUBJECT_FASTA, "fasta")}
+hit_lengths = {record.id: len(record.seq) for record in SeqIO.parse("subject_fasta_example.fasta", "fasta")}
 
 # Function that calculates real coverage (merging superimposed intervals)
 
@@ -38,19 +38,19 @@ def coverage_calculate(intervals):
 
 # Open new file to write results
 
-with open(OUTPUT_FILE, "w") as output:
+with open("example_output.txt", "w") as output:
     output.write(
         "query_id\tquery_length\thit_id\thit_length\tidentity\tbit_score\te_value\tquery_start\tquery_end\thit_start\thit_end\tquery_coverage(%)\tsubject_coverage(%)\n"
     )
 
     # Reads the results from BLAST in XML format
 
-    with open(BLAST_XML) as handle:
+    with open("example_blast.xml") as handle:
         for record in NCBIXML.parse(handle):
             query_id = record.query.split()[0] if record.query else "unknown_query"
             query_len = query_lengths.get(query_id, 0)
 
-            # Extracting ID of the hit correcly, even if it has pipes (|)
+            # Extracting ID of the hit correctly, even if it has pipes (|)
 
             for alignment in record.alignments:
                 hit_id = alignment.hit_id.split('|')[-2] if '|' in alignment.hit_id else alignment.hit_id
