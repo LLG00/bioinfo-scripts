@@ -7,16 +7,16 @@
 from Bio.Blast import NCBIXML
 from Bio import SeqIO
 
-query_lengths = {record.id: len(record.seq) for record in SeqIO.parse(QUERY_FASTA, "fasta")}
+query_lengths = {record.id: len(record.seq) for record in SeqIO.parse("query_fasta_example.fasta", "fasta")}
 
-hit_lengths = {record.id: len(record.seq) for record in SeqIO.parse(SUBJECT_FASTA, "fasta")}
+hit_lengths = {record.id: len(record.seq) for record in SeqIO.parse("subject_fasta_example.fasta", "fasta")}
 
 def coverage_calculate(intervals):
     if not intervals:
         return 0
-    intervals.sort(key=lambda x: x[0])
+    intervals.sort(key=lambda x: x[0])  
     coverage = 0
-    start, end = intervals[0] 
+    start, end = intervals[0]
     for actual_start, actual_end in intervals[1:]:
         if actual_start <= end + 1:
             end = max(end, actual_end)
@@ -26,12 +26,12 @@ def coverage_calculate(intervals):
     coverage += end - start + 1  
     return coverage
 
-with open(OUTPUT_FILE, "w") as output:
+with open("example_output.txt", "w") as output:
     output.write(
         "query_id\tquery_length\thit_id\thit_length\tidentity\tbit_score\te_value\tquery_start\tquery_end\thit_start\thit_end\tquery_coverage(%)\tsubject_coverage(%)\n"
     )
 
-    with open(BLAST_XML) as handle:
+    with open("example_blast.xml") as handle:
         for record in NCBIXML.parse(handle):
             query_id = record.query.split()[0] if record.query else "unknown_query"
             query_len = query_lengths.get(query_id, 0)
@@ -61,5 +61,3 @@ with open(OUTPUT_FILE, "w") as output:
 
                 output.write(
                     f"{query_id}\t{query_len}\t{hit_id}\t{hit_len}\t{identity:.6f}\t{bit_score:.2f}\t{e_value:.2e}\t"
-                    f"{query_start}\t{query_end}\t{hit_start}\t{hit_end}\t{query_coverage:.2f}\t{subject_coverage:.2f}\n"
-                )
