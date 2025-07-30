@@ -1,10 +1,10 @@
 ## Bioinformatics Scripts for Learning and Research
 
-This repository contains bioinformatics scripts created to support my research and help me learn the basics of programming, particularly in the context of sequence analysis using BLAST and FASTA files.
+This repository contains bioinformatics scripts developed to support my research and enhance my programming skills.
 
-Some parts of these scripts were generated or refined with the help of AI tools (e.g., ChatGPT) and then tested, adapted, and used in real research contexts.
+Some parts of these scripts were generated or refined with the help of AI tools (e.g., ChatGPT), and were subsequently tested, adapted, and applied in real research contexts.
 
-This repository is part of my learning journey during my Master's Program in Bioinformatics at UNICAMP (Brazil). 
+This repository reflects my learning journey as a bioinformatician and serves as a portfolio of my progress throughout my academic and professional development.
 
 ## Data
 
