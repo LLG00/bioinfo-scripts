@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 # Author: Luiza Lima Galli
-# Date: 2025
-# Description: Downloads HMM profiles from InterPro/Pfam and NCBI CDD,
-#              and consolidates them into a single indexed database for HMMER search.
+# Date: 2026
+# Description: Downloads HMM profiles from InterPro/Pfam and NCBI CDD, and consolidates them into a single indexed database for HMMER search.
 # Usage: bash 01_download_hmm_profiles.sh
 # Dependencies: wget, hmmer, gunzip
 # License: MIT
