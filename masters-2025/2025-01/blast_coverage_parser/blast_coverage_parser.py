@@ -11,7 +11,6 @@ from Bio import SeqIO
 query_lengths = {record.id: len(record.seq) for record in SeqIO.parse("example_data/query.fasta", "fasta")}
 hit_lengths   = {record.id: len(record.seq) for record in SeqIO.parse("example_data/subject.fasta", "fasta")}
 
-
 def coverage_calculate(intervals):
     if not intervals:
         return 0
