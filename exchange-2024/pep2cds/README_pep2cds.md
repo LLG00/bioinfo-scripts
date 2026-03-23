@@ -4,16 +4,30 @@
 > Developed during an academic exchange at Technische Universität Braunschweig (2024),  
 > as part of the Final Project at the [Python for Life Scientists Course (BB34)](https://www.tu-braunschweig.de/en/ifp/pbb/teaching/pythoncourseprojects).
 
----
-
 ## Description
 
 `pep2cds` is a Python script that reconstructs codon-preserving CDS alignments from protein (PEP) alignments. It maps codons from a nucleotide FASTA file using the corresponding translated protein sequences, and aligns them according to the input protein alignment.
 
 This tool is useful when codon-aware alignments are required for downstream analyses such as:
+
 - Selection detection (dN/dS)
 - Evolutionary and codon substitution modeling
 - Nucleotide-based phylogenetics (e.g., IQ-TREE, HyPhy)
+
+## Author
+
+- **Luiza Lima Galli**
+- Developed during an academic exchange at Technische Universität Braunschweig (2024)
+- Contact: luiza.lima.galli@gmail.com
+
+## Features
+
+- Back-translates a PEP alignment into a codon-based CDS alignment
+- Maps each amino acid to its corresponding codon(s) from the original CDS sequences
+- Expands gap characters (`-`) in the PEP alignment to codon gaps (`---`)
+- Handles ambiguous or overlapping codon assignments via synchronisation
+- Performs built-in sanity checks on input files
+- No external libraries required — pure Python standard library
 
 ---
 
@@ -45,16 +59,16 @@ muscle -align example_PEP.fasta -output example_PEP_align.fasta
 
 ```bash
 # No installation needed — pure Python standard library
-python pep_to_cds_aligner.py
+python pep2cds.py
 ```
 
-By default, the script reads from `example_data/` and writes to `output_CDS_align.fasta`. Edit the file paths at the bottom of the script to point to your own data.
+By default, the script reads from `example_data/` and writes to `output_cds_align.fasta`. Edit the file paths at the bottom of the script to point to your own data.
 
 ---
 
 ## Output
 
-A FASTA file (`output_CDS_align.fasta`) where each sequence is the codon-based alignment corresponding to the input PEP alignment:
+A FASTA file (`output_cds_align.fasta`) where each sequence is the codon-based alignment corresponding to the input PEP alignment:
 
 ```
 >seqA
@@ -71,7 +85,7 @@ Gap columns (`-`) in the PEP alignment are expanded to codon gaps (`---`).
 
 ## Sanity checks
 
-The script automatically warns you if:
+The script automatically warns if:
 
 - A sequence present in the PEP file has no corresponding CDS entry
 - A CDS sequence length is not exactly 3× its PEP length
@@ -87,14 +101,12 @@ The script automatically warns you if:
 
 ---
 
-## Author
+## Acknowledgments
 
-Luiza Lima Galli  
-Academic exchange — Technische Universität Braunschweig, 2024  
-Note: Some parts of this script were developed with the help of AI tools (e.g., ChatGPT), and were reviewed and tested by the author.
-
----
+- Some parts of this script were developed with support from AI tools (e.g., ChatGPT) and reviewed/tested by the author.
 
 ## License
 
-MIT © Luiza Lima Galli
+- MIT License.
+- You are free to use, modify, and distribute.
+- If you use this tool in your work, please cite the author (not obligatory, but appreciated).
