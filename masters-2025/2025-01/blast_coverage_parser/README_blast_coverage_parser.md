@@ -60,7 +60,7 @@ blastp \
 
 ```bash
 # Install dependencies
-pip install -r requirements.txt
+pip install -r requirements_blast_coverage_parser.txt
 
 # Run with example data
 python blast_coverage_parser.py
