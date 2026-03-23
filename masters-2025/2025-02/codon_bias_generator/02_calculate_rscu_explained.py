@@ -1,10 +1,8 @@
 #!/usr/bin/env python3
 # Author: Luiza Lima Galli
 # Date: 2025
-# Description: Calculates Relative Synonymous Codon Usage (RSCU) and codon
-#              frequency (per 1000 codons) from a set of CDS sequences.
-# Note: Some code components were generated with the help of AI tools (e.g., ChatGPT)
-#       and adapted/tested by the author.
+# Description: Calculates Relative Synonymous Codon Usage (RSCU) and codon frequency (per 1000 codons) from a set of CDS sequences.
+# Note: Some code components were generated with the help of AI tools (e.g., ChatGPT) and adapted/tested by the author.
 # License: MIT
 
 from Bio import SeqIO
@@ -16,7 +14,6 @@ import csv
 # ---------------------------------------------------------------------------
 CDS_FILE   = "top_genes_complete.cds.fasta"  # Input: complete CDS sequences
 OUTPUT_CSV = "codon_usage_rscu.csv"           # Output: RSCU table
-
 
 # ---------------------------------------------------------------------------
 # Standard codon table (NCBI translation table 1)
@@ -37,7 +34,6 @@ CODON_TABLE = {
     "GGT":"G","GGC":"G","GGA":"G","GGG":"G"
 }
 
-
 # ---------------------------------------------------------------------------
 # Count codons across all CDS sequences
 # ---------------------------------------------------------------------------
@@ -55,7 +51,6 @@ for record in SeqIO.parse(CDS_FILE, "fasta"):
 codon_counts = Counter(all_codons)
 print(f"Total codons counted: {sum(codon_counts.values())}")
 
-
 # ---------------------------------------------------------------------------
 # Group codons by amino acid (excluding stop codons)
 # ---------------------------------------------------------------------------
@@ -63,7 +58,6 @@ aa_codons = defaultdict(list)
 for codon, aa in CODON_TABLE.items():
     if aa != "Stop":
         aa_codons[aa].append(codon)
-
 
 # ---------------------------------------------------------------------------
 # Calculate RSCU
@@ -80,7 +74,6 @@ for aa, codons in aa_codons.items():
     for c in codons:
         expected = total / n_codons if total > 0 else 0
         rscu[c]  = codon_counts[c] / expected if expected > 0 else 0.0
-
 
 # ---------------------------------------------------------------------------
 # Write output CSV
