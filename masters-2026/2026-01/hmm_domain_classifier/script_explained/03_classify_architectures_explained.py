@@ -1,18 +1,14 @@
 #!/usr/bin/env python3
 # Author: Luiza Lima Galli
-# Date: 2025
-# Description: Classifies proteins by domain architecture using HMMER results,
-#              identifies positive genomes, and copies their FASTA files to an output directory.
-#              Architectures are loaded from an external JSON config file.
-# Note: Some code components were generated with the help of AI tools (e.g., ChatGPT)
-#       and adapted/tested by the author.
+# Date: 2026
+# Description: Classifies proteins by domain architecture using HMMER results, identifies positive genomes, and copies their FASTA files to an output directory. Architectures are loaded from an external JSON config file.
+# Note: Some code components were generated with the help of AI tools (e.g., ChatGPT) and adapted/tested by the author.
 # License: MIT
 
 import os
 import json
 import shutil
 from collections import Counter
-
 
 # ---------------------------------------------------------------------------
 # PARAMETERS — edit these to match your environment
@@ -21,7 +17,6 @@ RESULTS_DIR    = "results_hmm"          # Directory with HMMER .txt output files
 PROTEOMES_DIR  = "proteomes"            # Directory with original proteome .fa files
 OUTPUT_DIR     = "positive_proteomes"   # Output directory for positive genomes
 ARCH_CONFIG    = "architectures.json"   # Domain architecture config file
-
 
 # ---------------------------------------------------------------------------
 # Load architecture definitions from config file
@@ -33,7 +28,6 @@ canonical_architectures     = [set(a["domains"]) for a in config["canonical_arch
 non_canonical_architectures = {a["name"]: set(a["domains"]) for a in config["non_canonical_architectures"]}
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
-
 
 # ---------------------------------------------------------------------------
 # Parse HMMER results and classify proteins
