@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # Author: Luiza Lima Galli
-# Date: 2025
+# Date: 2026
 # Description: Classifies proteins by domain architecture using HMMER results, identifies positive genomes, and copies their FASTA files to an output directory. Architectures are loaded from an external JSON config file.
 # Note: Some code components were generated with the help of AI tools (e.g., ChatGPT) and adapted/tested by the author.
 # License: MIT
