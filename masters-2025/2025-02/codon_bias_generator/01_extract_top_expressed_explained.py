@@ -1,11 +1,8 @@
 #!/usr/bin/env python3
 # Author: Luiza Lima Galli
 # Date: 2025
-# Description: Extracts the top N most highly expressed CDS sequences from a
-#              Kallisto TPM matrix, using multiple ID-matching strategies to
-#              handle common header format variations.
-# Note: Some code components were generated with the help of AI tools (e.g., ChatGPT)
-#       and adapted/tested by the author.
+# Description: Extracts the top N most highly expressed CDS sequences from a Kallisto TPM matrix, using multiple ID-matching strategies to handle common header format variations.
+# Note: Some code components were generated with the help of AI tools (e.g., ChatGPT) and adapted/tested by the author.
 # License: MIT
 
 import pandas as pd
@@ -22,7 +19,6 @@ OUTPUT_FASTA   = "top_genes.cds.fasta"             # Output FASTA with top expre
 TOP_N          = 10                                # Number of top genes to extract
 SAMPLE_COLUMNS = None                              # List of sample column names to average;
                                                    # set to None to use all columns
-
 
 # ---------------------------------------------------------------------------
 # ID normalisation helpers
@@ -46,7 +42,6 @@ def normalize_id(x):
     """Apply all normalisation steps and lowercase."""
     return strip_version(first_token(before_pipe(str(x)))).lower()
 
-
 # ---------------------------------------------------------------------------
 # Load TPM matrix and select top expressed genes
 # ---------------------------------------------------------------------------
@@ -68,7 +63,6 @@ norm_to_original = defaultdict(list)
 for g in top_genes:
     norm_to_original[normalize_id(g)].append(g)
 
-
 # ---------------------------------------------------------------------------
 # Match TPM gene IDs to CDS FASTA sequences
 # Strategy: exact → first-token → normalised
@@ -83,19 +77,18 @@ with open(CDS_FASTA) as fasta_in:
         matched     = None
 
         if rec_id in top_genes_set:
-            matched = rec_id                                      # exact match
+            matched = rec_id # exact match
 
         if matched is None:
             tok = first_token(rec_id)
             if tok in top_genes_set:
-                matched = tok                                     # first-token match
+                matched = tok # first-token match
 
         if matched is None and rec_id_norm in norm_to_original:
-            matched = norm_to_original[rec_id_norm][0]           # normalised match
+            matched = norm_to_original[rec_id_norm][0] # normalised match
 
         if matched and matched not in found_records:
             found_records[matched] = record
-
 
 # ---------------------------------------------------------------------------
 # Write output FASTA preserving original TPM rank order
