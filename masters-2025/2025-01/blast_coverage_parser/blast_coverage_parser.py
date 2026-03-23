@@ -8,25 +8,11 @@
 from Bio.Blast import NCBIXML
 from Bio import SeqIO
 
-# ---------------------------------------------------------------------------
-# Load sequence lengths from FASTA files
-# These are used to calculate percent coverage for query and subject sequences
-# ---------------------------------------------------------------------------
 query_lengths = {record.id: len(record.seq) for record in SeqIO.parse("example_data/query.fasta", "fasta")}
 hit_lengths   = {record.id: len(record.seq) for record in SeqIO.parse("example_data/subject.fasta", "fasta")}
 
 
 def coverage_calculate(intervals):
-    """
-    Calculates the total non-redundant coverage from a list of (start, end) intervals.
-    Overlapping or adjacent intervals are merged before summing.
-
-    Args:
-        intervals: list of (int, int) tuples representing aligned regions
-
-    Returns:
-        int: total number of residues covered (non-redundant)
-    """
     if not intervals:
         return 0
 
@@ -45,14 +31,9 @@ def coverage_calculate(intervals):
     coverage += end - start + 1
     return coverage
 
-
-# ---------------------------------------------------------------------------
-# Parse BLAST XML output and write coverage table
-# ---------------------------------------------------------------------------
 with open("example_data/blast_results.xml") as handle, \
      open("output_coverage.tsv", "w") as output:
 
-    # Write TSV header
     output.write(
         "query_id\tquery_length\thit_id\thit_length\tidentity\tbit_score\t"
         "e_value\tquery_start\tquery_end\thit_start\thit_end\t"
@@ -64,7 +45,6 @@ with open("example_data/blast_results.xml") as handle, \
         query_len = query_lengths.get(query_id, 0)
 
         for alignment in record.alignments:
-            # Extract clean hit ID (handles pipe-delimited GenBank-style headers)
             hit_id  = alignment.hit_id.split('|')[-2] if '|' in alignment.hit_id else alignment.hit_id
             hit_len = hit_lengths.get(hit_id, 0)
 
@@ -81,7 +61,6 @@ with open("example_data/blast_results.xml") as handle, \
                 hit_start    = hsp.sbjct_start
                 hit_end      = hsp.sbjct_end
 
-                # Normalise coordinates in case of reverse-strand hits
                 query_intervals.append((min(query_start, query_end), max(query_start, query_end)))
                 subject_intervals.append((min(hit_start, hit_end), max(hit_start, hit_end)))
 
