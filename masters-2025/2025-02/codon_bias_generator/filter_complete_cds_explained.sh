@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 # Author: Luiza Lima Galli
 # Date: 2025
-# Description: Filters a CDS FASTA file to retain only complete coding sequences
-#              (containing "complete" and not "incomplete" in the header),
-#              then selects the top N sequences for codon usage analysis.
+# Description: Filters a CDS FASTA file to retain only complete coding sequences (containing "complete" and not "incomplete" in the header), then selects the top N sequences for codon usage analysis.
 # Usage: bash filter_complete_cds.sh
 # Dependencies: seqkit (https://bioinf.shenwei.me/seqkit/)
 # License: MIT
@@ -13,9 +11,9 @@ set -euo pipefail
 # ---------------------------------------------------------------------------
 # PARAMETERS — edit these to match your data
 # ---------------------------------------------------------------------------
-INPUT_FASTA="top_genes.cds.fasta"           # Output from 01_extract_top_expressed.py
+INPUT_FASTA="top_genes.cds.fasta" # Output from 01_extract_top_expressed.py
 FILTERED_FASTA="top_genes_complete.cds.fasta"
-TOP_N=200                                    # Number of complete sequences to keep
+TOP_N=200 # Number of complete sequences to keep
 
 # ---------------------------------------------------------------------------
 # Step 1: Keep only headers tagged as "complete" (not "incomplete")
