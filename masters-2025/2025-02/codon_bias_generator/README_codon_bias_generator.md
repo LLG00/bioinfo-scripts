@@ -1,4 +1,4 @@
-# codon_usage_pipeline
+# codon_bias_generator
 
 > A three-step pipeline to calculate Relative Synonymous Codon Usage (RSCU) from transcriptomic data.  
 > Developed as part of a research project during the author's Master's degree in Bioinformatics.
@@ -7,7 +7,7 @@
 
 ## Description
 
-`codon_usage_pipeline` is a Python + Bash pipeline that identifies the most highly expressed genes in a transcriptomic dataset and calculates their codon usage preferences. It computes:
+`codon_bias_generator` is a Python + Bash pipeline that identifies the most highly expressed genes in a transcriptomic dataset and calculates their codon usage preferences. It computes:
 
 - RSCU (Relative Synonymous Codon Usage) per codon
 - Raw codon counts
@@ -68,7 +68,7 @@ filter_complete_cds.sh        →  top_genes_complete.cds.fasta
 ### Step 1 — Extract top expressed genes
 
 ```bash
-pip install -r requirements.txt
+pip install -r requirements_codon_bias_generator.txt
 python 01_extract_top_expressed.py
 ```
 
@@ -129,7 +129,7 @@ The extraction script handles common FASTA header format variations automaticall
 - seqkit (for `filter_complete_cds.sh` only)
 
 ```bash
-pip install -r requirements.txt
+pip install -r requirements_codon_bias_generator.txt
 ```
 
 ---
