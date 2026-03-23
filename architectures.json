@@ -1,0 +1,38 @@
+{
+  "canonical_architectures": [
+    {
+      "name": "ArchType_A",
+      "domains": ["PF00001", "PF00002", "PF00003"]
+    },
+    {
+      "name": "ArchType_B",
+      "domains": ["PF00001", "PF00002", "PF00003", "PF00004"]
+    },
+    {
+      "name": "ArchType_C",
+      "domains": ["PF00001", "PF00003", "PF00004"]
+    },
+    {
+      "name": "ArchType_D",
+      "domains": ["PF00001", "PF00002"]
+    },
+    {
+      "name": "ArchType_E",
+      "domains": ["PF00001"]
+    }
+  ],
+  "non_canonical_architectures": [
+    {
+      "name": "AltType_X",
+      "domains": ["PF00005"]
+    },
+    {
+      "name": "AltType_Y",
+      "domains": ["PF00006"]
+    },
+    {
+      "name": "AltType_Z",
+      "domains": ["PF00007"]
+    }
+  ]
+}

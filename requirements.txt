@@ -1,0 +1,15 @@
+# Python dependencies
+# biopython not required for this pipeline — parsing is done with standard library only
+# Python >= 3.7
+
+# No pip packages required.
+# External tools required:
+#   - HMMER >= 3.3     (http://hmmer.org/)
+#   - GNU parallel     (https://www.gnu.org/software/parallel/)
+#   - wget
+#   - conda (recommended for environment setup)
+
+# To set up the conda environment:
+#   conda create -n hmmer_env -c conda-forge -c bioconda hmmer pandas biopython
+#   conda activate hmmer_env
+#   conda install -c conda-forge parallel
