@@ -17,7 +17,7 @@ It computes:
 ## Author
 
 - **Luiza Lima Galli**
-- Developed during the author's M.Sc. in Bioinformatics (2025)
+- Developed during the author's M.Sc. in Bioinformatics (2026)
 - Contact: luiza.lima.galli@gmail.com
 
 ## Features
