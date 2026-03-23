@@ -1,11 +1,8 @@
 #!/usr/bin/env python3
 # Author: Luiza Lima Galli
-# Date: 2025
-# Description: Counts proteins per domain architecture per genome from HMMER results,
-#              and exports a summary CSV table. Architectures are loaded from an
-#              external JSON config file.
-# Note: Some code components were generated with the help of AI tools (e.g., ChatGPT)
-#       and adapted/tested by the author.
+# Date: 2026
+# Description: Counts proteins per domain architecture per genome from HMMER results, and exports a summary CSV table. Architectures are loaded from an external JSON config file.
+# Note: Some code components were generated with the help of AI tools (e.g., ChatGPT) and adapted/tested by the author.
 # License: MIT
 
 import os
@@ -13,14 +10,12 @@ import csv
 import json
 from collections import Counter
 
-
 # ---------------------------------------------------------------------------
 # PARAMETERS — edit these to match your environment
 # ---------------------------------------------------------------------------
 RESULTS_DIR = "results_hmm"             # Directory with HMMER .txt output files
 ARCH_CONFIG = "architectures.json"      # Domain architecture config file
 OUTPUT_CSV  = "domain_counts_per_genome.csv"  # Output summary table
-
 
 # ---------------------------------------------------------------------------
 # Load architecture definitions from config file
@@ -38,7 +33,6 @@ non_canonical_architectures = {
 all_arch_names = list(canonical_architectures.keys()) + list(non_canonical_architectures.keys())
 all_columns    = ["Genome"] + all_arch_names
 results_data   = []
-
 
 # ---------------------------------------------------------------------------
 # Parse HMMER results and count proteins per architecture per genome
@@ -87,7 +81,6 @@ for filename in os.listdir(RESULTS_DIR):
         for col in all_arch_names:
             row[col] = genome_counts.get(col, 0)
         results_data.append(row)
-
 
 # ---------------------------------------------------------------------------
 # Export results to CSV
