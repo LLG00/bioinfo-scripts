@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Author: Luiza Lima Galli
-# Date: 2025
+# Date: 2026
 # Description: Runs HMMER hmmsearch in parallel against a set of proteome FASTA files, producing per-genome domain annotation tables (.domtab) and full reports (.txt).
 # Usage: bash 02_run_hmmsearch.sh
 # Dependencies: hmmer, GNU parallel
