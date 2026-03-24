@@ -99,7 +99,7 @@ except FileNotFoundError:
 
 dict_pep_alignment = {}
 try:
-    with open("example_data/example_pepP_align.fasta") as file:
+    with open("example_data/example_pep_align.fasta") as file:
         for line in file:
             if line.startswith('>'):
                 seq_name = line.strip().split()[0][1:]
@@ -128,4 +128,4 @@ with open("output_cds_align.fasta", "w") as out:
         print(f">{seq_name}")
         print(cds_alignment)
 
-print("\nDone! CDS alignment saved to output_cdsS_align.fasta")
+print("\nDone! CDS alignment saved to output_cds_align.fasta")
